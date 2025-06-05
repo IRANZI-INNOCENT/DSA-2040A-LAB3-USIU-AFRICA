@@ -1,131 +1,127 @@
-ETL Extract Lab
-Name: Iranzi InnocentStudent ID: 670513  
-Description
-This project is a take-home lab for DSA 2040A - Lab 3 (US 2025), focused on practicing the Extraction phase of the ETL (Extract, Transform, Load) process. The goal is to demonstrate Full Extraction and Incremental Extraction using a synthetic sales dataset. The project is implemented in a Jupyter Notebook (etl_extract.ipynb), which includes code to:
+# ETL Extract Lab  
+**Name:** Iranzi Innocent  
+**Student ID:** 670xxx  
 
-Generate a Dataset: Create a realistic sales dataset (custom_data.csv) with 100+ records, including columns for transaction ID, date, customer ID, product, and amount.
-Full Extraction: Extract all records from the dataset into a pandas DataFrame.
-Incremental Extraction: Extract only new records based on a timestamp stored in last_extraction.txt.
-Test Incremental Extraction: Simulate new data by appending records and verify that incremental extraction processes only the new records.
-Documentation: Provide clear explanations of each step using Markdown cells in the notebook.
+## Description
+This project is a take-home lab for **DSA 2040A - Lab 3 (US 2025)** focused on practicing the **Extraction** phase of the ETL (Extract, Transform, Load) process. It demonstrates **Full Extraction** and **Incremental Extraction** using a synthetic sales dataset.
 
-The project is organized in a folder named ETL_Extract_IranziInnocent_670513, which contains all required files and is uploaded to a public GitHub repository for submission.
-Tools Used
+The implementation is provided in a Jupyter Notebook (`etl_extract.ipynb`) and includes code to:
 
-Python: Programming language used to write the ETL code.
-pandas: Python library for data manipulation and extraction.
-Jupyter Notebook: Interactive environment for coding and documenting the project.
-Git/GitHub: Version control and repository hosting for project submission.
-random and datetime: Python libraries used to generate synthetic data.
+- **Generate a Dataset:** Create a realistic sales dataset (`custom_data.csv`) with 100+ records, including transaction ID, date, customer ID, product, and amount.
+- **Full Extraction:** Load all records from the dataset into a pandas DataFrame.
+- **Incremental Extraction:** Extract only new records using a timestamp stored in `last_extraction.txt`.
+- **Test Incremental Extraction:** Simulate new data by appending records and verify that only new entries are extracted.
+- **Documentation:** Provide step-by-step explanations using Markdown cells in the notebook.
 
-Project Structure
-The project folder (ETL_Extract_IranziInnocent_670513) contains the following files:
+All project files are organized in a folder named `ETL_Extract` and hosted on a public GitHub repository for submission.
 
-etl_extract.ipynb: Jupyter Notebook with all code and documentation for dataset generation, full extraction, incremental extraction, and testing.
-custom_data.csv: Synthetic sales dataset with 100+ records.
-last_extraction.txt: Text file to store the timestamp of the last extraction for incremental extraction.
-.gitignore: File to exclude unnecessary files (e.g., __pycache__, .ipynb_checkpoints) from the Git repository.
-README.md: This file, explaining the project and how to run it.
+## Tools Used
+- **Python**: Core programming language.
+- **pandas**: For data manipulation and extraction.
+- **Jupyter Notebook**: For interactive code development and documentation.
+- **Git/GitHub**: For version control and project submission.
+- **random, datetime**: For synthetic data generation.
 
-How to Reproduce
-To run this project on your computer, follow these steps:
+## Project Structure
 
-Install Python:
-
-Download and install Python (version 3.11 or later) from python.org.
-Ensure you check “Add Python to PATH” during installation.
-Verify installation by running in a terminal:python --version
+ETL\_Extract\_xxxx\xxxxx/
+├── etl\_extract.ipynb           # Main Jupyter Notebook
+├── custom\_data.csv             # Synthetic sales dataset
+├── last\_extraction.txt         # Tracks last extraction timestamp
+├── .gitignore                  # Excludes unnecessary files from Git
+└── README.md                   # Project overview and instructions
 
 
+## How to Reproduce
+
+### 1. Install Python
+Download and install Python 3.11 or later from [python.org](https://www.python.org/).  
+Ensure you check **“Add Python to PATH”** during installation.
+
+Verify installation:
+
+python --version
+
+### 2. Install Required Libraries
+
+Use pip to install dependencies:
+
+pip install jupyter pandas
+
+### 3. Clone the Repository
+
+Ensure Git is installed from [git-scm.com](https://git-scm.com/). After cloning;
 
 
-Install Required Libraries:
+### 4. Navigate to the Project Folder
 
-Install Jupyter Notebook and pandas using pip:pip install jupyter pandas
-
-
+cd your project directory
 
 
-Clone the Repository:
+### 5. Launch Jupyter Notebook
 
-Install Git from git-scm.com if not already installed.
-Clone this repository to your computer:git clone https://github.com/yourusername/ETL_Extract_IranziInnocent_670513.git
+jupyter notebook
 
-(Replace yourusername with your GitHub username.)
+This will open a browser window with the project directory.
 
+### 6. Run the Notebook
 
-Navigate to the Project Folder:
+* Open `etl_extract.ipynb`.
+* Click `Kernel > Restart & Run All` to execute all cells.
 
-Change to the project directory:cd ETL_Extract_IranziInnocent_670513
-
-
-
-
-Launch Jupyter Notebook:
-
-Start Jupyter:jupyter notebook
-
-
-This opens a browser window showing the project folder.
-
-
-Run the Notebook:
-
-Open etl_extract.ipynb in the Jupyter interface.
-Click “Kernel” > “Restart & Run All” to execute all cells in order.
 The notebook will:
-Generate custom_data.csv (if not already present).
-Perform full extraction, displaying all records.
-Perform incremental extraction, extracting records after the timestamp in last_extraction.txt.
-Add new records and re-run incremental extraction to demonstrate functionality.
 
+* Generate `custom_data.csv` if not present.
+* Perform full extraction and display all records.
+* Perform incremental extraction using `last_extraction.txt`.
+* Append new records and re-run incremental extraction.
 
+## Data Source
 
+The `custom_data.csv` file is a **synthetic dataset** created using Python’s `pandas`, `random`, and `datetime` libraries.
 
+Each record includes:
 
-Data Source
-The dataset (custom_data.csv) is a synthetic sales dataset generated using Python’s pandas, random, and datetime libraries. It contains 100 initial records, with 5 additional records added for testing incremental extraction. Each record includes:
+* `transaction_id`: Unique ID (1 to 105)
+* `date`: Date (from Jan 1, 2025 to Apr 5, 2025)
+* `customer_id`: Random value between 1000–9999
+* `product`: One of `Laptop`, `Phone`, `Tablet`, or `Headphones`
+* `amount`: Value between \$50 and \$1000 (rounded to 2 decimal places)
 
-transaction_id: Unique identifier (1 to 105).
-date: Transaction date (from Jan 1, 2025, to April 5, 2025).
-customer_id: Random customer ID (1000–9999).
-product: Product name (Laptop, Phone, Tablet, or Headphones).
-amount: Transaction amount ($50–$1000, rounded to 2 decimal places).
+This dataset simulates a sales transaction log with over 50 realistic records.
 
-The dataset meets the task requirement of having at least 50 realistic records, simulating a sales transaction log.
-Implementation Details
-1. Dataset Generation
+## Implementation Details
 
-The notebook generates a synthetic dataset with 100 records using Python’s random library for realistic values and datetime for dates between January 1, 2025, and approximately March 31, 2025.
-The dataset is saved as custom_data.csv in the project folder.
+### 1. Dataset Generation
 
-2. Full Extraction
+* Uses `random` and `datetime` to create 100 initial records.
+* Saves dataset to `custom_data.csv`.
 
-The notebook uses pandas.read_csv to load all records from custom_data.csv into a DataFrame.
-It displays the first 5 rows and the total number of records (100 initially) to verify the extraction.
+### 2. Full Extraction
 
-3. Incremental Extraction
+* Reads all data using `pandas.read_csv()`.
+* Displays first few rows and total record count.
 
-The notebook reads the last extraction timestamp from last_extraction.txt.
-If the file is empty or missing, it uses a default date (January 1, 2020) to ensure all records are extracted initially.
-It filters records with a date later than the last extraction timestamp using pandas.
-The extracted records are displayed, and the latest date is written to last_extraction.txt for the next extraction.
+### 3. Incremental Extraction
 
-4. Testing Incremental Extraction
+* Reads last timestamp from `last_extraction.txt`.
+* Uses default of Jan 1, 2020 if file is missing.
+* Filters and extracts only newer records.
+* Updates `last_extraction.txt` with latest date.
 
-The notebook appends 5 new records to custom_data.csv with dates in April 2025.
-Incremental extraction is re-run, demonstrating that only the new records are extracted based on the updated timestamp in last_extraction.txt.
+### 4. Testing Incremental Extraction
 
-5. Documentation
+* Appends 5 new records with April 2025 dates.
+* Re-runs incremental extraction to verify only new records are picked up.
 
-The notebook includes Markdown cells explaining each section: introduction, setup, dataset generation, full extraction, incremental extraction, testing, and conclusion.
-Code comments clarify the purpose of each code block.
+### 5. Documentation
 
-Notes
+* Clear Markdown explanations for each step.
+* Code is well-commented for clarity.
 
-The project is designed to be reproducible on any system with Python, pandas, and Jupyter installed.
-The notebook handles errors gracefully (e.g., missing last_extraction.txt) to ensure robust execution.
-All code is commented and documented for clarity, as required by the task.
-The repository is public, as specified, to allow access for grading.
+## Notes
 
-For any issues running the project, please contact Iranzi Innocent or check the GitHub repository for updates.
+* Designed to run on any system with Python, pandas, and Jupyter installed.
+* Handles errors like missing `last_extraction.txt`.
+* Repository is public as required for grading.
+
